@@ -1,6 +1,8 @@
 django-shibboleth-remoteuser
 ============================
 
+This is a fork used to keep things up to date
+
 Middleware for using Shibboleth with Django.  Requires Django 1.3 or above for RemoteAuthMiddleware.
 
 [![Build Status](https://secure.travis-ci.org/Brown-University-Library/django-shibboleth-remoteuser.png?branch=master)](http://travis-ci.org/Brown-University-Library/django-shibboleth-remoteuser)
@@ -40,7 +42,7 @@ Installation and configuration
   * Map Shibboleth attributes to Django User models. The attributes must be stated in the form they have in the HTTP headers.
     Use this to populate the Django User object from Shibboleth attributes.
 
-    The first element of the tuple states if the attribute is required or not. If a reqired element is not found in the parsed 
+    The first element of the tuple states if the attribute is required or not. If a reqired element is not found in the parsed
     Shibboleth headers, an exception will be raised.
     (True, "required_attribute")
     (False, "optional_attribute).
@@ -102,5 +104,3 @@ At this point, the django-shibboleth-remoteuser middleware should be complete.
        'shibboleth.context_processors.logout_link'
     )
    ```
-
-

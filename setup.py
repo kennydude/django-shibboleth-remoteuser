@@ -2,7 +2,7 @@
 Setup script adapted from Datadesk's softhyphen project:
 https://github.com/datadesk/django-softhyphen/blob/master/setup.py
 
-Which says: 
+Which says:
 Tricks lifted from Django's own setup.py and django_debug_toolbar.
 
 Still not sure why the templates install with this particular config
@@ -25,7 +25,7 @@ class osx_install_data(install_data):
     # which is wrong. Python 2.5 supplied with MacOS 10.5 has an Apple-specific fix
     # for this in distutils.command.install_data#306. It fixes install_lib but not
     # install_data, which is why we roll our own install_data class.
-    
+
     def finalize_options(self):
         # By the time finalize_options is called, install.install_lib is set to the
         # fixed directory, so we set the installdir to install_lib. The
@@ -33,10 +33,10 @@ class osx_install_data(install_data):
         self.set_undefined_options('install', ('install_lib', 'install_dir'))
         install_data.finalize_options(self)
 
-if sys.platform == "darwin": 
-    cmdclasses = {'install_data': osx_install_data} 
-else: 
-    cmdclasses = {'install_data': install_data} 
+if sys.platform == "darwin":
+    cmdclasses = {'install_data': osx_install_data}
+else:
+    cmdclasses = {'install_data': install_data}
 
 def fullsplit(path, result=None):
     """
@@ -83,7 +83,7 @@ if len(sys.argv) > 1 and sys.argv[1] == 'bdist_wininst':
         file_info[0] = '\\PURELIB\\%s' % file_info[0]
 
 setup(
-      name = "django-shibboleth-remoteuser",
+      name = "django-shibboleth-remoteuser-kennydude",
       version='0.5',
       long_description = read('README.md'),
       author = 'Ted Lawless',
@@ -94,5 +94,3 @@ setup(
       cmdclass = cmdclasses,
       data_files=data_files,
 )
-
-
