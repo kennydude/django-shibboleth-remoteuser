@@ -1,6 +1,9 @@
 from django.db import connection
-from django.contrib.auth.models import User, Permission
+from django.contrib.auth import get_user_model
 from django.contrib.auth.backends import RemoteUserBackend
+
+User = get_user_model()
+
 
 class ShibbolethRemoteUserBackend(RemoteUserBackend):
     """
